@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title> 404 Page Not Found </title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Sofia+Sans:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, rgb(123, 209, 255), rgb(0, 114, 196));
+}
+        #container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.heading {
+    color: #fff;
+    font-size: 15rem;
+    text-align: center;
+    font-family: 'Sofia Sans', sans-serif;
+}
+
+.sub-heading {
+    color: white;
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Sofia Sans', sans-serif;
+}
+
+article {
+    width: 80%;
+    color: white;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn {
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border-radius: 5rem;
+    text-transform: uppercase;
+    transition: all 0.2s linear;
+    font-family: 'Poppins', sans-serif;
+    border: 3px solid rgb(3, 91, 125);
+}
+
+.btn:hover {
+    color: white;
+    background-color: rgb(3, 91, 125);
+}
+.active {
+    color: white;
+    background-color: rgb(3, 91, 125);
+}
+
+.active:hover {
+    color: rgb(3, 91, 125);
+    background-color: transparent;
+    border: 3px solid rgb(3, 91, 125);
+}
+
+@media screen and (max-width: 430px) {
+    
+    .heading {
+        font-size: 10rem;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 1.2rem;
+        flex-direction: column;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+    <section id="container">
+        <h1 class="heading"> 404 </h1>
+        <h3 class="sub-heading">oops! page not found</h3>
+        <article>
+            Sorry, the page you're looking for doesn't exits. If you think something is broken, report a problem.
+        </article>
+        <div class="buttons">
+            <a href="/Home"><button class="btn active" id="home">return home</button></a>
+            <button class="btn" id="report">report problem</button>
+        </div>
+    </section>
+
+</body>
+</html>

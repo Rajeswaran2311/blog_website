@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogiverse</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+    body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    overflow-x: hidden;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #102C57;
+    color: white;
+    padding: 10px 20px;
+    max-height: 15vh;
+    position: fixed;
+    width: 100%;
+    transform: translatey(-25px);
+    z-index: 100;
+    
+}
+.header-left{
+    display:flex;
+}
+.header-left img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    margin-left:10px;
+}
+.header-right{
+    display: flex;
+}
+
+.header-right a {
+    color: white;
+    margin-right: 40px;
+    
+    text-decoration: none;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  
+
+}
+
+.bhagut:active{
+width: 100%;
+}
+
+.page {
+  display: block;
+  width: 180px;
+  height: 40px;
+  background-color: #102C57;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 25px;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  margin-top: 11vh;
+
+}
+
+.page:hover {
+  background-color: #3498db;
+  color: #fff;
+}
+
+#searchQueryInput{
+    background: aliceblue;
+    border:1px ;
+    border-radius: 30px;
+    
+}
+
+#searchQueryInput[type="search"]{
+    padding: 5px;
+    margin-left: 5px;
+}
+
+    </style>
+    
+</head>
+
+<body style="background-color: #CEE6F3;">
+    <header>
+        <div class="header-left">
+            <img src="{% static 'logo.png' %}" alt="Website Logo">
+            <h1>Blogiverse</h1>
+        </div>
+        <div class="header-right">
+            <a href="/Home">Home</a>
+            <div class="input-group">
+                <input type="search" id="search_bar" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                <button type="button" onclick="location.href='/Home/'+document.getElementById('search_bar').value.trim().replace(' ', '-');" class="btn btn-outline-primary">search</button>
+              </div>
+        </div>
+    </header>
+    <div class="pagination">
+        <h1>&lt</h1>
+        <a href="/Home/AI" class="page">Artificial Intelligence</a>
+        <a href="/Home/Technology" class="page">Technology</a>
+        <a href="/Home/machine-learning" class="page">Machine learning</a>
+        <a href="/Home/data-science" class="page">Data Science</a>
+        <a href="/Home/healthcare" class="page">Health care</a>
+        <h1>&gt</h1>
+      </div>
+    <div  style="color: black;padding-top: 50px;">
+        <h1 style="color: black;text-align: center;">{{name}}</h1>
+        
+    </div>
+    <div class="'hr" style="height: 1px;width: 85vw;transform: translateX(8%);background: black;"></div>
+    <br>
+    <div class="container ">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            {% for i,j,k in list %}
+            <div class="col">
+                <div class="card h-100" >
+                    <a href='{{j}}'><img src="{{k}}" class="card-img-top" alt="not found" width=320 height=320 onerror="this.onerror=null; this.src='{% static 'alt.jpg' %}'"> </a>
+                    <div class="card-body">
+                        <h5 class="card-title">{{i}}</h5>
+                        
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+        
+
+</body>
+
+</html>

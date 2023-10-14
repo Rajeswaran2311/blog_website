@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogiverse</title>
+     
+    <style>
+        /* Add your CSS styling here */
+        /* Reset some default styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    overflow-x: hidden;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #102C57;
+    color: white;
+    padding: 10px 20px;
+    max-height: 15vh;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+.header-left{
+    display:flex;
+}
+.header-left img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    margin-left:10px;
+}
+
+.header-right a {
+    color: white;
+    margin-right: 40px;
+
+    text-decoration: none;
+}
+
+/* First Section styles */
+.greeting-section {
+    /* text-align: center; */
+    /* /* width: 100%; */
+   
+    min-height: 100vh;
+    background-image: url("{% static 'm2.jpeg' %}");
+    background-size:cover;
+   
+
+    
+}
+
+
+
+/* .greeting-section img {
+    max-width: 100%;
+    height: auto;
+} */
+
+/* Second Section styles */
+
+
+.demo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+ 
+}
+
+.demo2{
+    transform: translateX(180px);
+    margin-top:100px;
+    margin-left:2rem;
+    transform: rotate(332deg);
+}
+/* Footer styles */
+
+.btn{
+    transform: translateX(-1.7rem);
+    position:absolute;
+    left: 30%;
+    border-radius: 75px;
+    border: 2px solid black;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    background-color: black;
+    color: #fff;
+    font-size: 20px;
+    
+}
+/* .move-head{
+    margin-top: 100px;
+    transform: rotate(332deg);
+    margin-left:2rem;
+} */
+.move-container{
+    height: 200px;
+    width:400px;
+    transform: rotate(332deg);
+    margin:200px 0 0 200px;
+    position: relative;
+
+}
+.grid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+.grid img{
+    width: 400px;
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 13px;
+    box-shadow: 4px 7px 7px 0px #00000042;
+    cursor: pointer;
+    margin: 10px;
+    transition: 400ms;
+}
+.grid img:hover{
+    filter: grayscale(1);
+    transform: scale(1.03);
+}
+ 
+.hr{
+    height: 1px;
+    width: 85vw;
+    transform: translateX(10%);
+    background: black;
+}
+
+
+    </style>
+</head>
+<body style="background-color:#CEE6F3">
+    <!-- Header Section #F6F4EB;-->
+    
+    <header>
+        <div class="header-left">
+            <img src="{% static 'logo.png' %}" alt="Website Logo">
+            <h1>Blogiverse</h1>
+        </div>
+        <div class="header-right">
+            <a href="#">Home</a>
+            {% if user.is_authenticated %}
+        <a href="logout/">LogOut</a>
+      {% else %}
+        <a href="{% url 'login' %}">Login</a>
+      {% endif %}
+            
+        </div>
+    </header>
+    
+    <!-- First Section -->
+    <section class="greeting-section demo">
+        <!-- <img src="Downloads/m1.jpg" alt="Greeting Image"> -->
+        <div class="move-container" >
+            <h1 style="font-family: 'Times New Roman', Times, serif;font-size: 70px;">Stay curious.</h1>
+            <h4 style="font-size: 20px;">Discover stories, thinking, and expertise from writers on any topic.</h4>
+            <div class="btn">Start Reading</div>
+
+        </div>
+
+        
+    
+    </section>
+    
+    <h2 style="font-size:2rem;font-family: 'Times New Roman', Times, serif;height: 4rem;transform: translateX(10%);margin-top: 2rem;">Category</h2>
+    <div class="hr"></div>
+    <div class="grid">
+
+        <a href="Artificial-Intelligence/"><img src="{% static 'ai1.jpg' %}" alt="..."></a>
+        <a href="Technology/"><img src="{% static 'Modren-Tech.jpg' %}" alt="..."></a>
+        <a href="Machine-learning/"><img src="{% static 'ml.png' %}" alt="Sample photo"></a>
+        <a href="Data-science/"><img src="{% static 'ds.jpg' %}" alt="Sample photo"></a>
+        <a href="Chatgpt/"><img src="{% static 'chat2.jpg' %}" alt="Sample photo"></a>
+        <a href="healthcare/"><img src="{% static 'h1.jpg' %}" alt="Sample photo"></a>
+    
+        
+        
+    </div>
+
+    
+    
+    <!-- Footer Section -->
+   
+</body>
+</html>
