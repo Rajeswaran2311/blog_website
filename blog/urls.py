@@ -10,4 +10,4 @@ urlpatterns = [
     path('Home/<str:tag>/',views.index_fetch,name='index_ai'),
 
      
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
