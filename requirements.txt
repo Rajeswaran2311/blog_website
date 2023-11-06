@@ -1,4 +1,5 @@
-﻿Django
+#requirements.txt
+Django
 feedparser
 gunicorn
 whitenoise
